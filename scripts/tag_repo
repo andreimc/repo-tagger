@@ -28,9 +28,9 @@ fi
 
 git remote add auth https://$GIT_USER:$GIT_PASS@bitbucket.org/$BITBUCKET_REPO_OWNER/$BITBUCKET_REPO_SLUG.git
 
-NEW_TAG=$(increment_version $LATEST_TAG)
+NEW_TAG=$(increment_version $OLD_TAG)
 
-echo -c "Old version: $OLD_TAG \nNew version: $NEW_TAG""
+echo -c "Old version: $OLD_TAG \nNew version: $NEW_TAG"
 
 git tag $NEW_TAG $BITBUCKET_COMMIT
 
