@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -x
 
 increment_version ()
 {
@@ -18,6 +18,9 @@ increment_version ()
 
 OLD_TAG=$(git describe --abbrev=0 --tags)
 rc=$?
+
+set -e
+
 if [[ $rc != 0 ]];
 then
     OLD_TAG=0.0.0;
